@@ -29,7 +29,7 @@ def process_file(file):
 
 if __name__ == '__main__':
 	#  Argument Parser
-	parser = argparse.ArgumentParser(description='PCR Error Simulation')
+	parser = argparse.ArgumentParser(description='Visualize your merges')
 
 	# Forward
 	parser.add_argument('-f','--forward',dest='forward', required=True, help='forward read file')
