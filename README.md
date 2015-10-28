@@ -13,6 +13,8 @@ optional arguments:
                         forward read file
   -r REVERSE, --reverse REVERSE
                         reverse read file
+  -i RUN_FOLDER, --run RUN_FOLDER
+                        A directory of fastqs
   -a AMPLICON, --amplicon AMPLICON
 ```
 
