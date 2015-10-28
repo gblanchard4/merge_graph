@@ -55,6 +55,8 @@ if __name__ == '__main__':
 	parser.add_argument('-i','--run', dest='run_folder', help='A directory of fastqs')
 	# Amplicon
 	parser.add_argument('-a','--amplicon',dest='amplicon', type=int, required=True, help='The desired amplicon length')
+	# Outfile
+	parser.add_argument('-o','--output',dest='outfile', required=True, help='The name of the output PNG')
 	
 	# Parse arguments
 	args = parser.parse_args()
@@ -62,6 +64,7 @@ if __name__ == '__main__':
 	reverse = args.reverse
 	amplicon = args.amplicon
 	run_folder = args.run_folder
+	png = args.outfile
 
 	if forward and reverse:
 		forward_average, forward_std = process_file(forward)
@@ -86,7 +89,6 @@ if __name__ == '__main__':
 You must enter: A Forward and Reverse file or a Run folder """
 		sys.exit()
 
-
 	# Make X,Y coords
 	fx = list(xrange(1,len(forward_average)+1))
 	fy = forward_average
@@ -100,7 +102,7 @@ You must enter: A Forward and Reverse file or a Run folder """
 	plt.plot(rx, ry)
 	plt.errorbar(fx, fy, fe)
 	plt.errorbar(rx, ry, re)
-	plt.savefig("merge.png")
+	plt.savefig(png)
 
 
 
